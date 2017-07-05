@@ -20,7 +20,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
     ItemsListComponent,
     ItemDetailComponent,
     FeaturedItemComponent,
-    WidgetsComponent,
+    WidgetsComponent
   ],
   imports: [
     BrowserModule,

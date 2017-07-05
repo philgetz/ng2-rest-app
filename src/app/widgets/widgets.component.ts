@@ -1,31 +1,36 @@
 import { Component } from '@angular/core';
-import { Widget, widgets } from '../shared';
 
 @Component({
-  selector: 'app-widgets',
-  templateUrl: './widgets.component.html',
-  styleUrls: ['./widgets.component.css']
+    selector: 'app-widget',
+    templateUrl: './widgets.component.html',
+    styleUrls: ['./widgets.component.css']
 })
+
 export class WidgetsComponent {
-  widgets: Array<Widget> = widgets;
-  selectedWidget: Widget;
+selectedWidget;
+// tslint:disable-next-line:member-ordering
+widgets = [
+  {
+    'id': 1,
+    'img': 'assets/img/one.png',
+    'name': 'Widget 1',
+    'description': 'This is a description'
+  },
+  {
+    'id': 2,
+    'img': 'assets/img/two.png',
+    'name': 'Widget 2',
+    'description': 'This is a description!'
+  },
+  {
+    'id': 3,
+    'img': 'assets/img/three.png',
+    'name': 'Widget 3',
+    'description': 'This is a lovely widget'
+  }];
 
-  constructor() {}
-
-  resetWidget() {
-    let emptyWidget: Widget = {id: null, name: '', description: ''};
-    this.selectedWidget = emptyWidget;
-  }
-
-  selectWidget(widget: Widget) {
+  selectWidget(widget) {
     this.selectedWidget = widget;
-  }
-
-  deleteWidget(widget: Widget) {
-    this.widgets.splice(this.widgets.indexOf(widget), 1);
-
-    this.resetWidget();
-  }
-
 }
 
+}
